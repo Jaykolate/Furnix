@@ -47,12 +47,9 @@ Furnix-Neon/
 ├── index.html
 ├── css/
 │   ├── style.css
-│   └── responsive.css
 ├── js/
 │   ├── app.js
-│   ├── cart.js
-│   └── products.js
-├── assets/
+├── images/
 │   ├── images/
 │   └── icons/
 └── README.md.
