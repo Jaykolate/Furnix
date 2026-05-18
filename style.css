@@ -102,7 +102,21 @@ img {
 
 .icon {
     font-size: 1.1rem;
+    /* added additional stylings */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    padding: 0.5rem;
+    color: var(--back);
 }
+
+.icon:hover {
+    color: var(--golden-hour);
+    transform: scale(1.2);
+}  
+    /*  */
 
 .navList {
     position: absolute;
@@ -132,6 +146,23 @@ img {
     color: var(--white);
     text-transform: capitalize;
 }
+/* styling for the icons in nav bar */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-icons .icon {
+    color: var(--back);
+    font-size: 1.1rem;
+}
+
+.nav-icons .icon i {
+    display: inline-block;
+    font-size: 1.1rem;
+} 
+/*  */
 
 /* SECTION STYLING */
 
@@ -206,27 +237,27 @@ h3 {
 }
 
 .category-card:nth-child(1) {
-    background-image: url(imgaes/category1.jpg);
+    background-image: url(images/category1.jpg);
 }
 
 
 .category-card:nth-child(2) {
-    background-image: url(imgaes/category2.jpg);
+    background-image: url(images/category2.jpg);
 }
 
 
 .category-card:nth-child(3) {
-    background-image: url(imgaes/category3.jpg);
+    background-image: url(images/category3.jpg);
 }
 
 
 .category-card:nth-child(4) {
-    background-image: url(imgaes/category4.jpg);
+    background-image: url(images/category4.jpg);
 }
 
 
 .category-card:nth-child(5) {
-    background-image: url(imgaes/category5.jpg);
+    background-image: url(images/category5.jpg);
 }
 
 h5 {
@@ -378,17 +409,45 @@ small {
     bottom: 50px;
 }
 
+    /* FAVORITE ICON STYLING  in product-card-images*/
+.favorite-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--antique-brown);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.favorite-icon:hover {
+    transform: scale(1.2);
+}
+
+.favorite-icon.active i {
+    font-weight: 900;
+    color: var(--antique-brown);
+
+}
+
+.favorite-icon.active i::before {
+    content: '\f004';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}  
+
 .center {
     justify-self: center;
 }
-
+/*  */
 /* SECTION 04 */
 
 .about-image {
     width: 32rem;
     height: 37rem;
     border-radius: 1.5rem;
-    background-image: url(imgaes/living-room.jpg);
+    background-image: url(images/living-room.jpg);
     background-position: center;
     background-size: cover;
     transform: rotateZ(5deg);
@@ -406,7 +465,7 @@ small {
     top: 50%;
     transform: translateY(-50%)rotateZ(-10deg);
     right: 400px;
-    background-image: url(imgaes/bedroom.jpg);
+    background-image: url(images/bedroom.jpg);
     background-position: inherit;
     background-size: inherit;
 }
@@ -427,7 +486,7 @@ small {
 
 /* SECTION 05 */
 .fix-section {
-    background-image: url(imgaes/fix-bg.jpg);
+    background-image: url(images/fix-bg.jpg);
     background-repeat: no-repeat;
     position: relative;
     backdrop-filter: blur(2.6rem);
@@ -514,7 +573,7 @@ small {
 
 /* FOOTER SECTION */
 .footer-image {
-    background-image: url(imgaes/footer-bg.jpg);
+    background-image: url(images/footer-bg.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
