@@ -339,6 +339,17 @@ if (placeOrderBtn) {
             }
         }
 
+        const orderRef = 'FNX-' + Math.floor(100000 + Math.random() * 900000) + '-' + Math.random().toString(36).substr(2, 4).toUpperCase();
+        const deliveryOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const deliveryDate = new Date();
+        deliveryDate.setDate(deliveryDate.getDate() + 5);
+        const deliveryStr = deliveryDate.toLocaleDateString('en-US', deliveryOptions);
+
+        const refEl = document.getElementById('successOrderRef');
+        const delEl = document.getElementById('deliveryDate');
+        if (refEl) refEl.innerText = orderRef;
+        if (delEl) delEl.innerText = deliveryStr;
+
         localStorage.removeItem(CART_KEY);
         updateCartBadge();
 
