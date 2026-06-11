@@ -586,6 +586,13 @@ if (searchIcon) {
 
 // ✅ Real-time badge sync across all pages without refresh
 window.addEventListener('storage', (e) => {
-    if (e.key === CART_KEY) updateCartBadge();
-    if (e.key === WISHLIST_KEY) updateWishlistBadge();
+    if (e.key === CART_KEY) {
+        updateCartBadge();
+        renderCartPage();
+        if (typeof renderCheckoutSummary === 'function') renderCheckoutSummary();
+    }
+    if (e.key === WISHLIST_KEY) {
+        updateWishlistBadge();
+        renderWishlistPage();
+    }
 });
