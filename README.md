@@ -62,7 +62,7 @@ Furnix-Neon/
 ├── images/
 │   └── icons/
 └── README.md
-
+```
 ## 🤝 Contributing
 
 Contributions are welcome! This project is open source under **SSoC 2026**.
