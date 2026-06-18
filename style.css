@@ -549,6 +549,27 @@ del {
     object-position: center;
     padding: 1.5rem;
 }
+/* Product image hover effect — zoom + dark overlay */
+.product-image img {
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+.product-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+    pointer-events: none;
+}
+
+.product-card:hover .product-image::after {
+    background: rgba(0, 0, 0, 0.15);
+}
 
 small {
     font-size: 0.7rem;
