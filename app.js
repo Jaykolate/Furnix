@@ -616,6 +616,7 @@ let topBtn = document.getElementById("topBtn");
 
 // show button when scrolling
 window.onscroll = function () {
+  if (!topBtn) return;
   if (document.documentElement.scrollTop > 100) {
     topBtn.style.display = "block";
   } else {
