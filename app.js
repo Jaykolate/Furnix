@@ -596,6 +596,49 @@ window.addEventListener('storage', (e) => {
         renderWishlistPage();
     }
 });
+
+/* 
+   BACK TO TOP BUTTON
+  */
+function setupBackToTop() {
+    if (document.querySelector('.back-to-top')) return;
+
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.setAttribute('aria-label', 'Back to top');
+    backToTopBtn.setAttribute('type', 'button');
+    backToTopBtn.innerHTML = '<i class="fa-solid fa-arrow-up" aria-hidden="true"></i>';
+    document.body.appendChild(backToTopBtn);
+
+    const SCROLL_THRESHOLD = 400;
+    let ticking = false;
+
+    function toggleVisibility() {
+        if (window.scrollY > SCROLL_THRESHOLD) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(toggleVisibility);
+            ticking = true;
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    toggleVisibility();
+}
+
+document.addEventListener('DOMContentLoaded', setupBackToTop);
+
+
 /* ---- PRODUCT SOCIAL SHARE SYSTEM ---- */
 function shareProduct(title, urlEnding) {
     const fullUrl = window.location.origin + '/' + urlEnding;
@@ -612,3 +655,15 @@ function shareProduct(title, urlEnding) {
         }).catch(err => console.error('Could not copy link:', err));
     }
 }
+
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+});
