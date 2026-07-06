@@ -1,6 +1,7 @@
 # 🪑 Furnix Neon — Modern Furniture E-Commerce Website
 
 > Officially participating in
+## ECSOC26
 ## ELUSOC 2026
 
 > A sleek and modern furniture shopping platform with a neon-inspired UI, built for smooth performance and elegant user experience.
