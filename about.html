@@ -11,6 +11,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+
+<script>
+    (function() {
+        try {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        } catch (e) {}
+    })();
+</script>
 </head>
 <body>
     <header>
@@ -34,8 +47,14 @@
                 </ul></li>
             </ul>
             <ul class="nav-icons flex g-one-half">
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                        <i class="fa-solid fa-moon" id="themeIcon" aria-hidden="true"></i>
+                    </button>
+                </li>
                 <li><a href="#" class="icon" aria-label="Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a></li>
                 <li><a href="login.html" class="icon" aria-label="Account"><i class="fa-solid fa-user" aria-hidden="true"></i></a></li>
+                <li>
                     <a href="wishlist.html" class="icon nav-icon-wrapper" aria-label="Wishlist">
                         <i class="fa-solid fa-heart" aria-hidden="true"></i>
                         <span id="wishlist-badge" class="nav-badge">0</span>
@@ -54,9 +73,10 @@
 
     <main>
         <!-- Page Header -->
-        <section class="wrapper p-block">
-            <div class="page-header-container">
-                <h2 class="h2-heading gradient-txt mt-3">Our <span>Story</span></h2>
+        <section class="wrapper about-hero">
+            <div class="page-header-container about-page-header">
+                <p class="about-kicker">About Furnix</p>
+                <h1 class="h2-heading gradient-txt">Our <span>Story</span></h1>
                 <p class="detail-info-platform page-header-desc">
                     At Furnix, we believe that your home should be a reflection of your personality. 
                     Since 2025, we have been crafting timeless pieces that blend aesthetics with everyday functionality.
@@ -65,38 +85,41 @@
         </section>
 
         <!-- Image and Text block -->
-        <section class="wrapper p-block flex g-one-half trend-section">
-            <div class="about-image">
+        <section class="wrapper about-story-grid flex g-one-half">
+            <div class="about-image" role="img" aria-label="Warm living room arranged with Furnix furniture">
 
             </div>
-            <div class="trend-text">
-                <h3 class="h2-heading gradient-txt">Crafting <span>Comfort</span></h3>
-                <p class="detail-info-platform mt-3">
+            <div class="trend-text about-story-content">
+                <h2 class="h2-heading gradient-txt">Crafting <span>Comfort</span></h2>
+                <p class="detail-info-platform">
                     What started as a small workshop has grown into a global furniture brand. 
                     Our journey has always been guided by a single passion: creating spaces where memories are made.
                 </p>
-                <p class="detail-info-platform mt-3">
+                <p class="detail-info-platform">
                     Every piece of Furnix furniture is thoughtfully designed, sustainably sourced, 
                     and meticulously crafted by our team of master artisans to ensure it lasts for generations.
                 </p>
-                <a href="collections.html" class="btn brown-bg mt-3">Explore Collections</a>
+                <a href="collections.html" class="btn brown-bg">Explore Collections</a>
             </div>
         </section>
 
         <!-- Core Values / Mission -->
-        <section class="gradient-bg p-block mt-3">
+        <section class="gradient-bg about-values-section">
             <div class="wrapper">
-                <div class="page-header-container">
+                <div class="page-header-container about-values-header">
                     <h2 class="h2-heading gradient-txt">Our <span>Values</span></h2>
+                    <p class="detail-info-platform page-header-desc">
+                        The principles behind every material choice, partnership, and finished piece.
+                    </p>
                 </div>
-                <div class="flex g-one-half mt-3">
+                <div class="about-values-grid flex g-one-half">
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fa-solid fa-leaf" aria-hidden="true"></i>
                         </div>
                         <div>
                             <h5>Sustainability</h5>
-                            <p class="detail-info-platform mt-3">
+                            <p class="detail-info-platform">
                                 We ethically source all our materials, prioritizing sustainable woods and recycled fabrics to minimize our footprint.
                             </p>
                         </div>
@@ -108,7 +131,7 @@
                         </div>
                         <div>
                             <h5>Quality Craftsmanship</h5>
-                            <p class="detail-info-platform mt-3">
+                            <p class="detail-info-platform">
                                 We never compromise on quality. Our furniture is rigorously tested to meet the highest industry standards.
                             </p>
                         </div>
@@ -120,7 +143,7 @@
                         </div>
                         <div>
                             <h5>Community First</h5>
-                            <p class="detail-info-platform mt-3">
+                            <p class="detail-info-platform">
                                 From fair wages for our artisans to supporting local charities, people are at the heart of what we do.
                             </p>
                         </div>
@@ -181,8 +204,8 @@
             <p>&copy; 2025 copyright furnix homes. powered by <span><i>janavi pandole</i></span></p>
         </div>
     </footer>
-
+<button id="topBtn" onclick="scrollToTop()">↑ Top</button>
     <script src="app.js"></script>
+    <script type="module" src="auth.js"></script>
 </body>
 </html>
-
