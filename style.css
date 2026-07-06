@@ -156,14 +156,42 @@ li {
 .brown-bg {
     background-color: var(--antique-brown);
     color: var(--white);
+}
 
+.btn.brown-bg:hover {
+    background-color: #7a1f14;
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.btn.brown-bg:active {
+    background-color: #5e1810;
+    transform: scale(0.97);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: 0.1s ease;
 }
 
 .btn:hover {
-    background-color: var(--back);
-    color: white;
+    background-color: #d4972e;
+    color: var(--back);
     transform: scale(1.1);
+}
 
+.btn:active {
+    background-color: #c08422;
+    transform: scale(0.97);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.1s ease;
+}
+
+a.btn:visited {
+    background-color: var(--golden-hour);
+    color: var(--back);
+}
+
+a.btn.brown-bg:visited {
+    background-color: var(--antique-brown);
+    color: var(--white);
 }
 
 img {
