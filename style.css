@@ -1984,17 +1984,20 @@ input:focus {
 }
 
 .input-container {
-  max-width: 300px;
-  height: 2.7rem;
-  background: rgba(240, 240, 240, 0.6);
-  border-radius: 1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 0.3rem;
-  display: flex;
+    max-width: 300px;
+    height: 2.7rem;
+    background: rgba(240, 240, 240, 0.6);
+    border-radius: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: .3rem;
+    display: flex;
+    align-items: center;
 }
 
 .input-container a {
-  background-color: var(--golden-hour);
+    background-color: var(--golden-hour);
+    width: 2.1rem;
+    line-height: 2.1rem;
 }
 
 .input-container input[type="email"] {
